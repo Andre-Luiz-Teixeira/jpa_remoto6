@@ -5,11 +5,34 @@
  */
 package model;
 
+import java.io.Serializable;
+import java.util.List;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
+
 /**
  *
  * @author andre
  */
-public class MdlProjeto {
+@Entity
+public class MdlProjeto implements Serializable {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int codigo;
     private String nome;
+    
+    @ManyToOne
+    private MdlPessoa gerente;
+    
+    @ManyToOne
+    private MdlCategoria categoria;
+    
+    @ManyToMany
+    private List<MdlPessoaFisica> Funcionario;
+    
 }

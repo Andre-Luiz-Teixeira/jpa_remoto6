@@ -5,6 +5,9 @@
  */
 package jpa_remoto6;
 
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+
 /**
  *
  * @author andre
@@ -15,7 +18,10 @@ public class Princial {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        
+        EntityManagerFactory fabrica =  Persistence.createEntityManagerFactory("remoto6PU");
+        fabrica.close();
+        System.out.println("/a");
     }
     
 }

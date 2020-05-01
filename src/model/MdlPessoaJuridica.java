@@ -5,10 +5,13 @@
  */
 package model;
 
+import javax.persistence.Entity;
+
 /**
  *
  * @author andre
  */
+@Entity
 public class MdlPessoaJuridica extends MdlPessoa{
     private String cnpj;
     private String ie;

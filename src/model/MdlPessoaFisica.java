@@ -5,11 +5,19 @@
  */
 package model;
 
+import java.util.List;
+import javax.persistence.Entity;
+import javax.persistence.ManyToMany;
+
 /**
  *
  * @author andre
  */
+@Entity
 public class MdlPessoaFisica extends MdlPessoa{
     private String cpf;
     private String rg;
+    
+    @ManyToMany (mappedBy = "Funcionario")
+    private List<MdlProjeto> Projeto;
 }
