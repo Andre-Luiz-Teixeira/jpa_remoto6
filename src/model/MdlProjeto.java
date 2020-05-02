@@ -32,7 +32,46 @@ public class MdlProjeto implements Serializable {
     @ManyToOne
     private MdlCategoria categoria;
     
-    @ManyToMany
-    private List<MdlPessoaFisica> Funcionario;
-    
+    @ManyToMany 
+    private List<MdlPessoaFisica> funcionario;
+
+    public int getCodigo() {
+        return codigo;
+    }
+
+    public void setCodigo(int codigo) {
+        this.codigo = codigo;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public MdlPessoa getGerente() {
+        return gerente;
+    }
+
+    public void setGerente(MdlPessoa gerente) {
+        this.gerente = gerente;
+    }
+
+    public MdlCategoria getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(MdlCategoria categoria) {
+        this.categoria = categoria;
+    }
+
+    public List<MdlPessoaFisica> getFuncionario() {
+        return funcionario;
+    }
+
+    public void setFuncionario(List<MdlPessoaFisica> funcionario) {
+        this.funcionario = funcionario;
+    }
 }

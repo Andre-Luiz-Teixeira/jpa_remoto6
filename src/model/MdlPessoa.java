@@ -21,7 +21,7 @@ import javax.persistence.OneToMany;
  */
 @Entity
 @Inheritance (strategy = InheritanceType.JOINED )
-public class MdlPessoa implements Serializable {
+public abstract class MdlPessoa {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int codigo;
@@ -30,4 +30,36 @@ public class MdlPessoa implements Serializable {
     
     @OneToMany(mappedBy = "gerente")
     private List<MdlProjeto> Projetos;
+
+    public int getCodigo() {
+        return codigo;
+    }
+
+    public void setCodigo(int codigo) {
+        this.codigo = codigo;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public double getSalario() {
+        return salario;
+    }
+
+    public void setSalario(double salario) {
+        this.salario = salario;
+    }
+
+    public List<MdlProjeto> getProjetos() {
+        return Projetos;
+    }
+
+    public void setProjetos(List<MdlProjeto> Projetos) {
+        this.Projetos = Projetos;
+    }
 }

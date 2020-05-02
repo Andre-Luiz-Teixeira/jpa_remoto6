@@ -26,4 +26,28 @@ public class MdlCategoria implements Serializable {
     
     @OneToMany(mappedBy = "categoria")
     private List<MdlProjeto> listaProjeto;
+
+    public int getCodigo() {
+        return codigo;
+    }
+
+    public void setCodigo(int codigo) {
+        this.codigo = codigo;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public List<MdlProjeto> getListaProjeto() {
+        return listaProjeto;
+    }
+
+    public void setListaProjeto(List<MdlProjeto> listaProjeto) {
+        this.listaProjeto = listaProjeto;
+    }
 }

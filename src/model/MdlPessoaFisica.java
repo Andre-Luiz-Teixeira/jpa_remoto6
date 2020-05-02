@@ -5,6 +5,7 @@
  */
 package model;
 
+import java.io.Serializable;
 import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.ManyToMany;
@@ -14,10 +15,34 @@ import javax.persistence.ManyToMany;
  * @author andre
  */
 @Entity
-public class MdlPessoaFisica extends MdlPessoa{
+public class MdlPessoaFisica extends MdlPessoa implements Serializable{
     private String cpf;
     private String rg;
     
-    @ManyToMany (mappedBy = "Funcionario")
-    private List<MdlProjeto> Projeto;
+    @ManyToMany (mappedBy = "funcionario")
+    private List<MdlProjeto> projeto;
+
+    public String getCpf() {
+        return cpf;
+    }
+
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
+    }
+
+    public String getRg() {
+        return rg;
+    }
+
+    public void setRg(String rg) {
+        this.rg = rg;
+    }
+
+    public List<MdlProjeto> getProjeto() {
+        return projeto;
+    }
+
+    public void setProjeto(List<MdlProjeto> Projeto) {
+        this.projeto = Projeto;
+    }
 }
